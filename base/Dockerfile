@@ -10,5 +10,6 @@ RUN git clone git://github.com/tokuhirom/Perl-Build.git /root/.plenv/plugins/per
 RUN echo 'eval "$(plenv init -)"' >> /etc/profile.d/plenv.sh
 
 ENV PATH /root/.plenv/bin:/root/.plenv/shims:$PATH
+ENV PLENV_ROOT /root/.plenv
 RUN . /etc/profile
-RUN plenv install-cpanm
+RUN plenv install
