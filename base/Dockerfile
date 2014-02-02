@@ -11,4 +11,4 @@ RUN echo 'eval "$(plenv init -)"' >> /etc/profile.d/plenv.sh
 
 ENV PATH /root/.plenv/bin:/root/.plenv/shims:$PATH
 RUN . /etc/profile
-RUN plenv
+RUN plenv install
