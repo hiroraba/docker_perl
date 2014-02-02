@@ -11,4 +11,3 @@ RUN echo 'eval "$(plenv init -)"' >> /etc/profile.d/plenv.sh
 
 ENV PATH /root/.plenv/bin:$PATH
 RUN . /etc/profile
-RUN plenv install 5.18.2
