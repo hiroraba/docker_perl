@@ -18,5 +18,5 @@ RUN git clone git://github.com/tokuhirom/Perl-Build.git /root/.plenv/plugins/per
 RUN echo 'eval "$(plenv init -)"' >> /etc/profile.d/plenv.sh
 
 ENV PATH /root/.plenv/bin:/root/.plenv/shims:$PATH
-RUN sudo sh /etc/profile.d/plenv.sh
+RUN eval "$(plenv init -)"
 RUN plenv install 5.18.2
