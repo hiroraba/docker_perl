@@ -13,9 +13,9 @@ RUN apt-get -y install libpq-dev
 RUN apt-get -y install libsqlite3-dev
 
 RUN git clone git://github.com/tokuhirom/plenv.git /root/.plenv
+ENV PATH /root/.plenv/bin:$PATH
+RUN echo 'eval "$(plenv init -)"' >> /root/.bash_profile
 RUN git clone git://github.com/tokuhirom/Perl-Build.git /root/.plenv/plugins/perl-build/
 
-RUN echo 'eval "$(plenv init -)"' >> /etc/profile.d/plenv.sh
 
-ENV PATH /root/.plenv/bin:$PATH
 RUN plenv install 5.18.2
