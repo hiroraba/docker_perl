@@ -13,4 +13,4 @@ ENV PATH /root/.plenv/bin:$PATH
 ENV PLENV_ROOT /root/.plenv
 RUN . /etc/profile
 ADD ./perl_versions /root/
-RUN cat /root/perl_versions | xargs plenv install
+RUN xargs -L 1 plenv install < /root/perl_versions
