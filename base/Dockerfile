@@ -12,4 +12,4 @@ RUN echo 'eval "$(plenv init -)"' >> /etc/profile.d/plenv.sh
 ENV PATH /root/.plenv/bin:/root/.plenv/shims:$PATH
 ENV PLENV_ROOT /root/.plenv
 RUN . /etc/profile
-RUN plenv install
+RUN plenv install 5.19.0
