@@ -2,7 +2,7 @@ FROM base
 
 RUN apt-get -y update
 RUN apt-get -y upgrade
-RUN apt-get -y install build-essential git-core vurl
+RUN apt-get -y install build-essential git-core curl
 
 RUN git clone git://github.com/tokuhirom/plenv.git /root/.plenv
 RUN git clone git://github.com/tokuhirom/Perl-Build.git /root/.plenv/plugins/perl-build/
