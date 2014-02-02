@@ -1,16 +1,8 @@
 FROM base
 
 RUN apt-get -y update
-RUN apt-get -y upgrade
-RUN apt-get -y install git-core
-RUN apt-get -y install wget
-RUN apt-get -y install libopenssl-ruby
-RUN apt-get -y install build-essential
-RUN apt-get -y install libreadline-dev libssl-dev zlib1g-dev
-RUN apt-get -y install libssl-dev libssl1.0.0
-RUN apt-get -y install curl
-RUN apt-get -y install libpq-dev
-RUN apt-get -y install libsqlite3-dev
+RUN apt-get -y install build-essential git-core curl
+RUN apt-get clean
 
 RUN git clone git://github.com/tokuhirom/plenv.git /root/.plenv
 RUN git clone git://github.com/tokuhirom/Perl-Build.git /root/.plenv/plugins/perl-build/
@@ -18,5 +10,7 @@ RUN git clone git://github.com/tokuhirom/Perl-Build.git /root/.plenv/plugins/per
 RUN echo 'eval "$(plenv init -)"' >> /etc/profile.d/plenv.sh
 
 ENV PATH /root/.plenv/bin:$PATH
+ENV PLENV_ROOT /root/.plenv
+RUN . /etc/profile
 ADD ./perl_versions /root/
 RUN cat /root/perl_versions | xargs plenv install
